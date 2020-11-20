@@ -18,8 +18,14 @@ public class RealNumber{
   *Return true when the values are within 0.001% of eachother.
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
-  public boolean equals(RealNumber other){
-    return true;
+  public boolean equals(RealNumber other1){
+    double other = other1.getValue();
+    RealNumber zero = new RealNumber(0.0);
+    if (value == 0.0){
+       return (other==0.0);
+    }
+    double temp = (Math.abs(value-other))/((value+other)/2)*100;
+    return (temp<0.001);
   }
 
   /*
@@ -29,7 +35,9 @@ public class RealNumber{
   public RealNumber add(RealNumber other){
      //other can be ANY RealNumber, including a RationalNumber
      //or other subclasses of RealNumber (that aren't written yet)
-     return null;
+    double other1 = other.getValue();
+    RealNumber answer = new RealNumber(value+other1);
+    return answer;
   }
 
   /*
@@ -37,7 +45,9 @@ public class RealNumber{
   *the product of this and the other
   */
   public RealNumber multiply(RealNumber other){
-        return null;
+    double other1 = other.getValue();
+    RealNumber answer = new RealNumber(value*other1);
+    return answer;
   }
 
   /*
@@ -45,7 +55,9 @@ public class RealNumber{
   *this divided by the other
   */
   public RealNumber divide(RealNumber other){
-        return null;
+    double other1 = other.getValue();
+    RealNumber answer = new RealNumber(value/other1);
+    return answer;
   }
 
   /*
@@ -53,6 +65,8 @@ public class RealNumber{
   *this minus the other
   */
   public RealNumber subtract(RealNumber other){
-    return null;
+    double other1 = other.getValue();
+    RealNumber answer = new RealNumber(value-other1);
+    return answer;
   }
 }
