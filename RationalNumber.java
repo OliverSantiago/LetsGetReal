@@ -9,17 +9,19 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber(int nume, int deno){
     super(0.0);//this value is ignored!
+    numerator=nume;
+    denominator=deno;
   }
 
   public double getValue(){
-    return 0.0;
+    return (numerator/denominator);
   }
 
   /**
   *@return the numerator
   */
   public int getNumerator(){
-    return 0;
+    return numerator;
   }
   /**
   *@return the denominator
@@ -95,4 +97,4 @@ public class RationalNumber extends RealNumber
   public RationalNumber subtract(RationalNumber other){
     return null;
   }
-} 
+}
