@@ -9,12 +9,19 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber(int nume, int deno){
     super(0.0);//this value is ignored!
+    if (denominator == 0){
+      denominator = 1;
+      numerator = 0;
+    }
     numerator=nume;
     denominator=deno;
   }
 
   public double getValue(){
-    return (numerator/denominator);
+    double answer = ((double)numerator)/((double)denominator);
+    //printing out numerator and denominator seperately gives the right answer
+    //but this method always returns 0
+    return (answer);
   }
 
   /**
@@ -27,19 +34,23 @@ public class RationalNumber extends RealNumber
   *@return the denominator
   */
   public int getDenominator(){
-    return 0;
+    return denominator;
   }
   /**
   *@return a new RationalNumber that has the same numerator
   *and denominator as this RationalNumber but reversed.
   */
   public RationalNumber reciprocal(){
-    return null;
+    RationalNumber answer = new RationalNumber(denominator,numerator);
+    return answer;
   }
   /**
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
   */
   public boolean equals(RationalNumber other){
+    if (denominator == other.getDenominator()&&numerator == other.getNumerator()){
+      return true;
+    }
     return false;
   }
 
