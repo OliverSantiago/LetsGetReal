@@ -15,6 +15,7 @@ public class RationalNumber extends RealNumber
     }
     numerator=nume;
     denominator=deno;
+    reduce();
   }
 
   public double getValue(){
@@ -84,15 +85,19 @@ public class RationalNumber extends RealNumber
   }
 
   public int gcdtester(){
-    return(gcd(12,3));
+    reduce();
+    return(0);
   }
+
   /**
   *Divide the numerator and denominator by the GCD
   *This must be used to maintain that all RationalNumbers are
   *reduced after construction.
   */
   private void reduce(){
-
+    int g = gcd(numerator,denominator);
+    numerator = numerator/g;
+    denominator = denominator/g;
   }
   /******************Operations Return a new RationalNumber!!!!****************/
   /**
