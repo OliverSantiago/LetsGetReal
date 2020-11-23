@@ -71,10 +71,21 @@ public class RationalNumber extends RealNumber
   */
   private static int gcd(int a, int b){
     /*use euclids method or a better one*/
-    http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
-    return 0;
+    //http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
+    int answer = 0;
+    for (int i = 1; i <= Math.min(a,b); i++){
+      if (a%i==0&&b%i==0){
+        if (i>answer){
+          answer = i;
+        }
+      }
+    }
+    return answer;
   }
 
+  public int gcdtester(){
+    return(gcd(12,3));
+  }
   /**
   *Divide the numerator and denominator by the GCD
   *This must be used to maintain that all RationalNumbers are
