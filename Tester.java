@@ -19,5 +19,11 @@ public class Tester{
     System.out.println(test3.reciprocal().getValue());
     System.out.println(test3.equals(test4));
     System.out.println(test3.equals(test5));
+    System.out.println(test3.toString());
+
+    System.out.println(test4.gcdtester());
+
+    System.out.println(test4.toString());
+
   }
 }
