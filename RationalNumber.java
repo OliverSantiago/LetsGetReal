@@ -73,7 +73,7 @@ public class RationalNumber extends RealNumber
   private static int gcd(int a, int b){
     /*use euclids method or a better one*/
     //http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
-    int answer = 0;
+    int answer = 1;
     for (int i = 1; i <= Math.min(a,b); i++){
       if (a%i==0&&b%i==0){
         if (i>answer){
@@ -132,6 +132,10 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    return null;
+    int m = denominator*other.getDenominator();
+    System.out.println(m);
+    int answern = (numerator*(m/denominator))-(other.getNumerator()*(m/other.getDenominator()));
+    RationalNumber answer = new RationalNumber(answern, m);
+    return answer;
   }
 }
