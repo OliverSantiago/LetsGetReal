@@ -29,5 +29,7 @@ public class Tester{
     // System.out.println(test3.divide(test5).toString());
     System.out.println(test3.add(test5).toString());
     System.out.println(test3.subtract(test5).toString());
+
+    System.out.println(test.compareTo(test2));
   }
 }
