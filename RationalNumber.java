@@ -122,7 +122,11 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    return null;
+    int m = denominator*other.getDenominator();
+    System.out.println(m);
+    int answern = (numerator*(m/denominator))+(other.getNumerator()*(m/other.getDenominator()));
+    RationalNumber answer = new RationalNumber(answern, m);
+    return answer;
   }
   /**
   *Return a new RationalNumber that this minus the other
